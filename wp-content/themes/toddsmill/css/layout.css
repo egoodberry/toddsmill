@@ -1,0 +1,166 @@
+body {
+  text-align: center;
+  font-family: "brandon-grotesque", sans-serif;
+  background: url('../images/bg.png');
+}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #888;
+}
+a:hover {
+  color: #000;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+
+/* sticky footer */
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -100px;
+}
+#footer, .push {
+  height: 100px;
+}
+
+/* Layout */
+
+#logo {
+  margin-top: 20px;
+}
+
+#contact {
+  margin-top: 30px;
+}
+#contact > span {
+  padding: 0px 10px 0 12px;
+}
+
+#hours {
+  margin-top: 30px;
+  font-size: .9em;
+}
+#hours > div {
+  margin-top: 7px;
+}
+#hours .title {
+  font-family: "Times New Roman", serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#menus {
+  margin-top: 30px;
+}
+#menus a {
+  padding: 0 10px 0 7px;
+  border-right: solid 1px #888;
+}
+#menus a:last-child {
+  border-right: none;
+}
+
+#contact, #menus {
+  letter-spacing: 1px;
+}
+
+#open-table-wrapper {
+  height: 40px;
+  width: 870px;
+  margin: 40px auto;
+}
+#open-table-wrapper .OT_wrapper {
+  border-color: #888;
+}
+#open-table-wrapper .OT_wrapper li {
+  border-color: #888;
+}
+
+.phone-mobile, .open-table-mobile {
+  display: none;
+}
+#contact .phone-desktop {
+  display: inline;
+}
+
+.with-border {
+  border-left: solid 1px #888;
+  padding: 4px 0 4px 13px;
+}
+
+.social-desktop a {
+  margin-right: 7px;
+}
+
+.social-desktop img {
+  vertical-align: top;
+  margin-top: 2px;
+}
+
+#footer {
+  background: #797a7d;
+  padding: 10px 50px;
+  box-sizing: border-box;
+}
+#footer ul {
+  list-style: none;
+}
+#footer li {
+  display: inline;
+  padding: 4px 10px;
+  border-right: solid 1px #888;
+}
+#footer li:last-child {
+  border-right: none;
+}
+#footer a {
+  color: #ddd;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
+#footer a:hover, #footer .current_page_item a {
+  color: #fff;
+}
+
+
+@media only screen and (max-width: 767px) {
+  #logo {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #contact > span {
+    display: block;
+    border: none;
+  }
+
+  .phone-mobile {
+    display: inline;
+  }
+  #contact .phone-desktop, #open-table-wrapper {
+    display: none;
+  }
+  .open-table-mobile {
+    display: block;
+  }
+}
