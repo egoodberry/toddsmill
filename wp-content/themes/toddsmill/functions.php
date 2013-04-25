@@ -14,11 +14,13 @@
       $menu_items = wp_get_nav_menu_items($menu->term_id);
       $menu_list = '<ul>';
 
+      $current_page_id = get_the_ID();
       foreach ( (array) $menu_items as $key => $menu_item ) {
         $title = $menu_item->title;
         $url = $menu_item->url;
+        $class = ($menu_item->object_id == $current_page_id) ? 'current' : '';
 
-        $menu_list .= '<li><a class="" href="' . $url . '">' . $title . '</a></li>';
+        $menu_list .= '<li><a class="' .$class. '" href="' .$url. '">' .$title. '</a></li>';
       }
 
       // add login / logout
@@ -27,7 +29,7 @@
       if( is_user_logged_in( ) ) {
         $login_link = '<a href="' . wp_logout_url( $redirect ) . '" title="' .  __( 'Logout' ) .'">' . __( 'Logout' ) . '</a>';
       } else {
-        $login_link = '<a href="' . wp_login_url( $redirect  ) . '" title="' .  __( 'Login' ) .'">' . __( 'Login' ) . '</a>';
+        $login_link = '<a href="' . wp_login_url(false) . '" title="' .  __( 'Login' ) .'">' . __( 'Login' ) . '</a>';
       }
       $menu_list .= '<li>' .$login_link. '</li>';
 

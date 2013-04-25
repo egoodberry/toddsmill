@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/normalize.min.css">
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/main.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/grid.css">
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/layout.css">
   <script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
@@ -20,73 +21,90 @@
   <![endif]-->
 
   <div class="wrapper">
-    <a href="/">
-      <img id="logo" src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="Todd's Mill'" height="150" />
-    </a>
+    <div class="container">
+      <div id="content" class="cf">
+        <a href="/" class="grid_12">
+          <img id="logo" src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="Todd's Mill'" height="120" />
+        </a>
 
-    <?php if (is_front_page()) { ?>
-      <div id="contact">
-        <span>162 Orchard Street, New York, NY 10002</span>
-        <span class="phone-mobile">
-          <a href="tel:+12129950300">(212) 995-0300</a>
-        </span>
-        <span class="phone-desktop with-border">(212) 995-0300</span>
-        <span class="social-desktop with-border">
-          <a title="Todd's Mill on Facebook" href="http://www.facebook.com/pages/Todds-Mill/445791252105505">
-            <img src="<?php bloginfo('template_directory'); ?>/images/facebook.png" />
-          </a>
-          <a title="Todd's Mill on Twitter" href="https://twitter.com/ToddsMill">
-            <img src="<?php bloginfo('template_directory'); ?>/images/twitter.png" />
-          </a>
-        </span>
-      </div>
+        <section id="contact" class="grid_12">
+          <span>162 Orchard Street, New York, NY 10002</span>
+          <span>(212) 995-0300</span>
+          <span class="social">
+            <a title="Todd's Mill on Facebook" href="http://www.facebook.com/pages/Todds-Mill/445791252105505">
+              <img src="<?php bloginfo('template_directory'); ?>/images/facebook.png" height="12" />
+            </a>
+            <a title="Todd's Mill on Twitter" href="https://twitter.com/ToddsMill">
+              <img src="<?php bloginfo('template_directory'); ?>/images/twitter.png" height="12" />
+            </a>
+          </span>
+        </section>
 
-      <div id="hours">
-        <div>
-          <div class="title">Dinner</div>
-          Sun - Wed 5:30p - 12:00a, Thur - Sat 5:30p - 2:00a
-        </div>
-        <div>
-          <div class="title">Brunch</div>
-          Sat - Sun 11:00a - 4:00p
-        </div>
-      </div>
+        <?php if (is_front_page()) { ?>
 
-      <div id="menus">
-        <?php $args = array(
-          'post_type' => 'attachment',
-          'numberposts' => null,
-          'post_status' => null,
-          'post_parent' => $post->ID
-        );
-        $attachments = get_posts($args);
-        if ($attachments) {
-          foreach ($attachments as $attachment) {
-            the_attachment_link($attachment->ID, false);
-          }
-        } ?>
-      </div>
+          <section id="banner" class="grid_12">
+            <img src="<?php bloginfo('template_directory'); ?>/images/home-small.jpg" alt="Todd's Mill'" />
+          </section>
 
-      <div id="open-table-wrapper">
-        <script type="text/javascript" src="http://www.opentable.com/frontdoor/default.aspx?rid=97558&restref=97558&bgcolor=FFF&titlecolor=000&subtitlecolor=CCC&btnbgimage=http://www.opentable.com/frontdoor/img/ot_btn_black.png&otlink=FFFFFF&icon=dark&mode=wide&hover=1"></script>
-      </div>
-      <div class="open-table-mobile">
-        <a href="http://m.opentable.com/?RestaurantId=97558">Make a Reservation</a>
-      </div>
-    <?php } elseif (have_posts()) {
-            while (have_posts()) {
+          <section id="hours" class="grid_6 border">
+            <?php while (have_posts()) {
               the_post();
+            ?>
+              <h2><?php the_title(); ?></h2>
+            <?php
               the_content();
-            }
-          } else { ?>
-      <p>Sorry, no posts matched your criteria.</p>
-    <?php } ?>
+            } ?>
+          </section>
 
-    <div class="push"></div>
+          <section id="menus" class="grid_6 border">
+            <h2>Menus</h2>
+            <?php $args = array(
+              'post_type' => 'attachment',
+              'numberposts' => null,
+              'post_status' => null,
+              'post_parent' => $post->ID
+            );
+            $attachments = get_posts($args);
+            if ($attachments) {
+              foreach ($attachments as $attachment) {
+                the_attachment_link($attachment->ID, false);
+              }
+            } ?>
+          </section>
+
+          <section class="grid_12 border open-table desktop">
+            <h2>Make a Reservation</h2>
+            <script type="text/javascript" src="http://www.opentable.com/frontdoor/default.aspx?rid=97558&restref=97558&subtitlecolor=CCC&btnbgimage=http://www.opentable.com/frontdoor/img/ot_btn_black.png&otlink=FFFFFF&icon=dark&mode=wide&hover=1"></script>
+          </section>
+          <section class="grid_12 border open-table mobile">
+            <h2>Make a Reservation</h2>
+            <a href="http://m.opentable.com/?RestaurantId=97558">Make a Reservation</a>
+          </section>
+
+        <?php } elseif (have_posts()) {
+                while (have_posts()) {
+                  the_post();
+        ?>
+          <section class="border grid_12 page-content">
+            <h1><?php the_title(); ?></h1>
+            <?php the_content(); ?>
+          </section>
+        <?php
+                }
+              } else { ?>
+          <p>Sorry, no posts matched your criteria.</p>
+        <?php } ?>
+
+        </div>
+      </div>
   </div>
 
   <div id="footer">
     <?php footer_menu(); ?>
+
+    <small class="legal">
+      ©<?php echo date("Y"); ?> Todd's Mill
+    </small>
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

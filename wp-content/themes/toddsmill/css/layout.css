@@ -5,6 +5,7 @@ body {
 }
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 html, body {
   height: 100%;
@@ -16,6 +17,34 @@ a {
 }
 a:hover {
   color: #000;
+}
+
+.border h1, .border h2 {
+  color: #797a7d;
+  margin: 0;
+  font-family: 'jbt-annabelle';
+  font-size: 51px;
+  position: absolute;
+  top: -33px;
+  left: -16px;
+  line-height: 71px;
+}
+
+h3 {
+  font-family: "Times New Roman", serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 15px 0 5px 0;
+}
+
+section.border {
+  border: solid 1px #ddd;
+  border-radius: 10px;
+  padding: 15px 40px 40px 40px;
+  background-color: rgba(255,255,255,0.5);
+  position: relative;
 }
 
 .cf:before,
@@ -30,15 +59,17 @@ a:hover {
     *zoom: 1;
 }
 
-/* sticky footer */
 .wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -100px;
+  margin-bottom: -70px;
 }
-#footer, .push {
-  height: 100px;
+.wrapper .container {
+  padding-bottom: 70px;
+}
+#content {
+  margin-bottom: 50px;
 }
 
 /* Layout */
@@ -47,82 +78,133 @@ a:hover {
   margin-top: 20px;
 }
 
+#banner {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+#banner img {
+  border-radius: 8px;
+  padding: 2px;
+  border: solid 1px #bbb;
+}
+
 #contact {
-  margin-top: 30px;
+  font-size: 12px;
+  margin-top: 10px;
+  letter-spacing: 1px;
 }
 #contact > span {
   padding: 0px 10px 0 12px;
 }
 
 #hours {
-  margin-top: 30px;
   font-size: .9em;
 }
-#hours > div {
-  margin-top: 7px;
-}
-#hours .title {
-  font-family: "Times New Roman", serif;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-weight: 700;
+#hours p {
+  margin: 0;
 }
 
 #menus {
-  margin-top: 30px;
+  padding-top: 32px;
 }
 #menus a {
-  padding: 0 10px 0 7px;
-  border-right: solid 1px #888;
-}
-#menus a:last-child {
-  border-right: none;
+  display: block;
 }
 
-#contact, #menus {
-  letter-spacing: 1px;
+
+.open-table {
+  margin-top: 60px;
+}
+.open-table.border {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.open-table .OT_wrapper {
+  border: none;
+  background-color: transparent;
+}
+.open-table h1 {
+  display: none;
+}
+.open-table h2.OT_subtitle {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 8px;
+  top: 22px;
+  left: 10px;
+}
+.open-table .OT_list {
+  width: 730px;
+  margin: 0 auto;
+  margin-top: 8px;
+}
+.open-table li {
+  border: none;
+  height: 50px;
+  width: auto;
+  margin-left: 20px;
+}
+.open-table input {
+  width: 130px;
 }
 
-#open-table-wrapper {
-  height: 40px;
-  width: 870px;
-  margin: 40px auto;
-}
-#open-table-wrapper .OT_wrapper {
-  border-color: #888;
-}
-#open-table-wrapper .OT_wrapper li {
-  border-color: #888;
-}
-
-.phone-mobile, .open-table-mobile {
+.phone-mobile, .mobile {
   display: none;
 }
 #contact .phone-desktop {
   display: inline;
 }
 
-.with-border {
-  border-left: solid 1px #888;
-  padding: 4px 0 4px 13px;
+#contact span {
+  border-right: solid 1px #888;
+  padding: 0px 13px;
+}
+#contact span:last-child {
+  border-right: none;
 }
 
-.social-desktop a {
+.social a {
   margin-right: 7px;
 }
-
-.social-desktop img {
+.social img {
   vertical-align: top;
   margin-top: 2px;
+  filter: url(filters.svg#grayscale);
+  filter: gray;
+  -webkit-filter: grayscale(1);
+}
+.social a:hover img {
+  filter: none;
+  -webkit-filter: grayscale(0);
+}
+
+.page-content {
+  margin-top: 65px;
+  line-height: 30px;
+  text-align: left;
+}
+.page-content img {
+  border-radius: 6px;
+  padding: 1px;
+  border: solid 1px #ccc;
+}
+.page-content .alignright {
+  float: right;
+  margin: 0 0 10px 25px;
+}
+.page-content .alignleft {
+  float: left;
+  margin: 0 25px 10px 0;
 }
 
 #footer {
   background: #797a7d;
-  padding: 10px 50px;
-  box-sizing: border-box;
+  padding: 5px 50px;
+  clear: both;
 }
 #footer ul {
   list-style: none;
+  margin-bottom: 0;
 }
 #footer li {
   display: inline;
@@ -133,34 +215,30 @@ a:hover {
   border-right: none;
 }
 #footer a {
-  color: #ddd;
+  color: #bbb;
 }
 #footer a:hover {
-  text-decoration: underline;
+  color: #ddd;
 }
-#footer a:hover, #footer .current_page_item a {
+#footer .current, #footer .current:hover {
   color: #fff;
+}
+#footer .legal {
+  font-size: 11px;
+  color: #333;
 }
 
 
 @media only screen and (max-width: 767px) {
-  #logo {
-    width: 100%;
-    margin-top: 20px;
-  }
-
   #contact > span {
     display: block;
     border: none;
   }
 
-  .phone-mobile {
-    display: inline;
-  }
-  #contact .phone-desktop, #open-table-wrapper {
-    display: none;
-  }
-  .open-table-mobile {
+  .mobile {
     display: block;
+  }
+  .desktop {
+    display: none;
   }
 }
