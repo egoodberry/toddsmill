@@ -64,7 +64,11 @@
               'post_status' => null,
               'post_parent' => $post->ID
             );
+            function attachmentSort( $a, $b ) {
+                return $a->post_content == $b->post_content ? 0 : ( $a->post_content > $b->post_content ) ? 1 : -1;
+            }
             $attachments = get_posts($args);
+            usort( $attachments, 'attachmentSort' );
             if ($attachments) {
               foreach ($attachments as $attachment) {
                 the_attachment_link($attachment->ID, false);
