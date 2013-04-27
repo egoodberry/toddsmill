@@ -258,7 +258,10 @@ section.border {
     font-family: 'jbt-annabelle';
     font-size: 30px;
   }
-  #menus {
+  #menus, #hours {
     margin-top: 30px;
+  }
+  #banner {
+    display: none;
   }
 }
