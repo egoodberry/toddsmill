@@ -110,6 +110,7 @@ section.border {
 }
 #menus a {
   display: block;
+  margin-bottom: 10px;
 }
 
 
@@ -132,6 +133,7 @@ section.border {
   font-size: 8px;
   top: 22px;
   left: 10px;
+  line-height: 20px;
 }
 .open-table .OT_list {
   width: 730px;
@@ -146,13 +148,6 @@ section.border {
 }
 .open-table input {
   width: 130px;
-}
-
-.phone-mobile, .mobile {
-  display: none;
-}
-#contact .phone-desktop {
-  display: inline;
 }
 
 #contact span {
@@ -228,17 +223,42 @@ section.border {
   color: #333;
 }
 
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .open-table #OT_form {
+    margin-top: 30px;
+    width: auto;
+  }
+  .open-table .OT_wrapper {
+    float: none;
+    width: auto;
+  }
+  .open-table .OT_list {
+    width: auto;
+  }
+}
 
 @media only screen and (max-width: 767px) {
-  #contact > span {
-    display: block;
-    border: none;
-  }
-
   .mobile {
     display: block;
   }
   .desktop {
-    display: none;
+    display: none !important;
+  }
+
+  #contact > span {
+    display: block;
+    border: none;
+  }
+  /* fancy headers are less fancy */
+  .border h1, .border h2 {
+    font-family: 'jbt-annabelle';
+    font-size: 30px;
+  }
+  #menus {
+    margin-top: 30px;
   }
 }

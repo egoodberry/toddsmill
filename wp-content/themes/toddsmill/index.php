@@ -24,7 +24,7 @@
     <div class="container">
       <div id="content" class="cf">
         <a href="/" class="grid_12">
-          <img id="logo" src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="Todd's Mill'" height="120" />
+          <img id="logo" src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="Todd's Mill'" />
         </a>
 
         <section id="contact" class="grid_12">
@@ -81,7 +81,6 @@
             <script type="text/javascript" src="http://www.opentable.com/frontdoor/default.aspx?rid=97558&restref=97558&subtitlecolor=CCC&btnbgimage=http://www.opentable.com/frontdoor/img/ot_btn_black.png&otlink=FFFFFF&icon=dark&mode=wide&hover=1"></script>
           </section>
           <section class="grid_12 border open-table mobile">
-            <h2>Make a Reservation</h2>
             <a href="http://m.opentable.com/?RestaurantId=97558">Make a Reservation</a>
           </section>
 
