@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/main.css">
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/grid.css">
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/layout.css">
-  <script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
   <!--[if lt IE 7]>
@@ -112,6 +111,8 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+  <script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/js/main.js"></script>
   <script type="text/javascript" src="//use.typekit.net/ltl4esh.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script type="text/javascript">
