@@ -41,10 +41,6 @@
 
         <?php if (is_front_page()) { ?>
 
-          <section id="banner" class="grid_12">
-            <img src="<?php bloginfo('template_directory'); ?>/images/home-small.jpg" alt="Todd's Mill'" />
-          </section>
-
           <section id="hours" class="grid_6 border">
             <?php while (have_posts()) {
               the_post();
